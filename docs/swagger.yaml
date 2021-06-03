@@ -1,0 +1,37 @@
+definitions:
+  models.PingResponse:
+    properties:
+      message:
+        example: pong
+        type: string
+    type: object
+host: localhost:8002
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: A simple ping API.
+  license:
+    name: The Unlicense
+    url: http://unlicense.org
+  termsOfService: http://swagger.io/terms/
+  title: Ping API
+  version: "1.0"
+paths:
+  /ping:
+    get:
+      consumes:
+      - application/json
+      description: ping this server
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PingResponse'
+      summary: Ping endpoint
+      tags:
+      - ping
+swagger: "2.0"
